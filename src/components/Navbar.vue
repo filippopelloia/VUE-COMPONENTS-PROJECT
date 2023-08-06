@@ -8,7 +8,12 @@
             <div class="collapse navbar-collapse" :key="index" id="navbarNav">
                 <ul class="navbar-nav">
                     <li v-for="(page, index) in pages" class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">{{ page }}</a>
+
+                        <a class="nav-link active" 
+                           aria-current="page" 
+                           :href="page.voice.url"
+                        >{{ page.voice.name }}</a>
+                        
                     </li>
                 </ul>
             </div>
@@ -20,7 +25,20 @@
     export default {
         data(){
             return{
-                pages: ['Home', 'Location', 'Contact us']
+                pages: [
+                    {
+                        voice: {name: 'Home', url: 'home.html'},
+                        content: 'This is the end of the world! Enjoy it!'
+                    },
+                    {
+                        voice: {name: 'Location', url: 'location.html'},
+                        content: 'Omni-man is currently on the road to the Earth.'
+                    },
+                    {
+                        voice: {name: 'Contacts', url: 'contacts.html'},
+                        content: 'It\'s done.'
+                    }
+                ]
             }
         }
     }
