@@ -1,4 +1,5 @@
 <template>
+    <navbar></navbar>
     <p>Simple text</p>
     <h1>{{ marando }}</h1>
 </template>
